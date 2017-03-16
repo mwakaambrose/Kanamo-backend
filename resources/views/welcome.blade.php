@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Kanamo Backend 1.5
                 </div>
 
                 <div class="links">
