@@ -18,8 +18,8 @@
 <script src="/js/jquery.js"></script>
 <script src="/js/countdown.js"></script>
 <script src="/js/uikit.scrollspy.js"></script>
-<script src="j/s/scripts.js"></script>
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script src="/js/scripts.js"></script>
+<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body id="backtotop">
 
