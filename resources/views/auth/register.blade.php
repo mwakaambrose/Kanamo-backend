@@ -10,11 +10,19 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"> <strong>Login Details</strong></label>
+                        </div>
+                        <hr>
+
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="name" type="text" class="form-control" name="name" 
+                                    value="{{ old('name') }}" 
+                                    required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -59,6 +67,37 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"> <strong>Business Details</strong></label>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label for="business_name" class="col-md-4 control-label">Business Name</label>
+
+                            <div class="col-md-6">
+                                <input id="business_name" type="text" class="form-control" name="business_name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address" class="col-md-4 control-label">Address</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control" name="address" required>
+                            </div>
+                        </div>
+
+                        <!-- <div class="form-group">
+                            <label for="cordinates" class="col-md-4 control-label">Cordinates</label>
+
+                            <div class="col-md-6">
+                                <input id="cordinates" type="text" class="form-control col-md-6" name="longitudes" required placeholder="Longitudes"><br><br>
+                                <input id="cordinates" type="text" class="form-control col-md-6" name="latitiude" required placeholder="Latitiude">
+                            </div>
+                        </div> -->
+
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
