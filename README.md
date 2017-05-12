@@ -21,5 +21,5 @@ Laravel backend for the Kanamo android app. stubs project
     1. `vm$ mysql -u homestead --password=secret`
     1. `mysql> CREATE DATABASE kanamo;`
     1. `mysql> CREATE USER kanamo@localhost IDENTIFIED BY 'password';`
-    1. `mysql> GRANT ALL ON mobis4.* TO kanamo@localhost;`
-1. Visit `http://mobis4.dev` in your browser
+    1. `mysql> GRANT ALL ON kanamo.* TO kanamo@localhost;`
+1. Visit `http://kanamo.app` in your browser
