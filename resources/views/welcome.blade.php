@@ -1,27 +1,5 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
-<head>
-<meta charset="UTF-8">
-<title>Kanamo - Cloud Under developement</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-<link rel="shortcut icon" href="images/ico/favicon.png">
-<html lang="{{ config('app.locale') }}">
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-<!--[if IE]><![endif]-->
-<link rel="stylesheet" href="/css/style.css">
-<script src="/js/jquery.js"></script>
-<script src="/js/countdown.js"></script>
-<script src="/js/uikit.scrollspy.js"></script>
-<script src="/js/scripts.js"></script>
-<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-</head>
-<body id="backtotop">
+@extends('layouts.app')
+@section('content')
 
 <div class="fullwidth clearfix">
 	<div id="topcontainer" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
@@ -99,5 +77,5 @@
 		<p>Kanamo is powered by <a title="download website templates" href="http://www.facebook.com/TrustFinity" rel="external">TrustFinity</a> - &copy 2017 </p>
 	</div>
 </div>
-</body>
-</html>
+
+@endsection
