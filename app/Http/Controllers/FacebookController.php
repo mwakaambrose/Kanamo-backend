@@ -21,7 +21,7 @@ class FacebookController extends Controller
 
     public function message(Request $request)
     {
-       
+       return $request->all();;
     }
 
     public function subscribe(Request $request)
@@ -32,5 +32,13 @@ class FacebookController extends Controller
     public function reserve(Request $request)
     {
             
+    }
+
+    /**
+     *  handle method is required. 
+     */
+    public function handle(ReceiveMessage $message)
+    {
+        $this->send(new Text($message->getSender(), "Default Handler: {$message->getMessage()}"));
     }
 }

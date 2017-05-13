@@ -8,6 +8,8 @@ return [
     'handlers' => [
         Casperlaitw\LaravelFbMessenger\Contracts\DefaultHandler::class
     ],
-    'custom_url' => '/webhook',
-    'postbacks' => [],
+    'custom_url' => '/api/v1/facebook/',
+    'postbacks' => [
+        App\StartupPostback::class,
+    ],
 ];
