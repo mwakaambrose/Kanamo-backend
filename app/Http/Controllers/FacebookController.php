@@ -14,21 +14,23 @@ class FacebookController extends Controller
 
     }
 
-    /**
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
-     */
     public function facebookVerify(Request $request)
     {
         return $request->all()['hub_challenge'];
     }
 
-    /**
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function facebookMessage(Request $request)
+    public function message(Request $request)
     {
        
+    }
+
+    public function subscribe(Request $request)
+    {
+
+    }
+
+    public function reserve(Request $request)
+    {
+            
     }
 }
