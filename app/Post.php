@@ -12,7 +12,6 @@ class Post extends Model
      * @var array
      */
     protected $fillable = [
-        'title',
 
         // 'location',
         'city',
@@ -25,6 +24,8 @@ class Post extends Model
         'business_name',
 
         // event info
+        'title',
+        'description',
         'start_time',
         'end_time',
         'price',

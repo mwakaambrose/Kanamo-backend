@@ -1,14 +1,14 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(User::class, function (Faker\Generator $faker) {
-    static $password;
+$factory->define(Post::class, function (Faker\Generator $faker) {
 
     return [
         // location info
-        'street_address' => $faker->streetAddress,
         'city' => $faker->city,
         'state' => $faker->state,
+        'street_address' => $faker->streetAddress,
+        'post_code' => $faker->postcode,
         'country' => $faker->country,
 
         // business info
