@@ -10,15 +10,18 @@
     height: 300px;
     width: 100%;
 }
+.panel-buttons {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
 </style>
 
 
 <div class="row">
     <div class="col-xs-12">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <a class="btn btn-default" href="/events/create">New Event</a>
-            </div>
+        <div class="panel panel-buttons">
+            <a class="btn btn-default" href="/events/create">New Event</a>
         </div>
     </div>
 
@@ -34,10 +37,11 @@
 
             <div class="list-group">
                 @foreach ($events as $event)
-                    @if(count($events) < 1)
-                    <li class="list-group-item">There are no events nearby.</li>
+                    @if (!isset($events))
+                        <li class="list-group-item">There are no events nearby.</li>
+                    @else
+                        <li class="list-group-item">{{ $event->name }}</li>
                     @endif
-                    <li class="list-group-item">{{ $event->name }}</li>
                 @endforeach
             </div>
 

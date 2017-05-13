@@ -45,14 +45,27 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li>
-                                <a class="kanamo-nav" href="{{ route('login') }}">Sign In <i class="fa fa-sign-in fa-fw"></i></a>
+                                <a class="kanamo-nav" href="{{ route('login') }}">
+                                    Sign In <i class="fa fa-sign-in fa-fw"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="kanamo-nav" href="{{ route('register') }}">
+                                    Register <i class="fa fa-arrow-right fa-fw"></i>
+                                </a>
                             </li>
                         @else
-                            <li ><a href="/events"><span class="kanamo-nav">Events</span></a></li>
+                            <li>
+                                <a href="/events">
+                                    <span class="kanamo-nav">Events</span>
+                                </a>
+                            </li>
                             <li class="dropdown">
-
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <i class="fa fa-user-circle fa-fw kanamo-nav"></i> <span class="kanamo-nav">{{ Auth::user()->first_name }}</span><span class="caret"></span>
+                                    <i class="fa fa-user-circle fa-fw kanamo-nav"></i> <span class="kanamo-nav">
+                                        {{ Auth::user()->first_name }}
+                                    </span><span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
