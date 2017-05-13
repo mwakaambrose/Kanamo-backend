@@ -8,7 +8,7 @@ return [
     'handlers' => [
         Casperlaitw\LaravelFbMessenger\Contracts\DefaultHandler::class
     ],
-    'custom_url' => '/api/v1/facebook/bot',
+    'custom_url' => '/test',
     'postbacks' => [
         App\StartupPostback::class,
     ],
