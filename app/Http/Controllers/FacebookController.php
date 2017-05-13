@@ -19,7 +19,9 @@ class FacebookController extends Controller
 
     public function events()
     {
-        //pull todays events from the database and send here.
+        //pull todays events from the database and send a broadcast here.
+        //user ids.
+
         $chatfuel = new Chatfuel(TRUE);
         $chatfuel->sendText('Here is what I have so far.');
 
@@ -31,9 +33,19 @@ class FacebookController extends Controller
     public function subscribe(Request $request)
     {
         $user_id = $request->all()['chatfuel_user_id'];
-        $messenger_user_id = $request->all()['chatfuel_user_id'];
+        $first_name = $request->all()['first_name'];
+
+        //Store this to the database if not already stored.
+
         $chatfuel = new Chatfuel(TRUE);
-        $chatfuel->sendText('These are the offers we have today: .'.$user_id .' - '.$messenger_user_id);
+        $chatfuel->sendText('Hey '.$first_name.', Here is what I have so far.');
+        for ($i=0; $i < 5; $i++) { 
+
+            $chatfuel->sendTextCard('Franeko Pub - '.$i, [
+                $chatfuel->createButtonToURL('Make reservation.', 'http://facebook.com/kanamoUg'),
+            ]);
+        }
+
     }
 
     public function reserve(Request $request)
