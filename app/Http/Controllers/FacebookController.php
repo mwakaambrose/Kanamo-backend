@@ -39,7 +39,7 @@ class FacebookController extends Controller
     {
         $chatfuel = new Chatfuel(TRUE);
         $chatfuel->sendTextCard('These are the offers we have toda.', [
-            $chatfuel->createButtonToURL('Subscribe to Happyhours', 'https://kanamo@herokuapp.com/api/v1/facebook/bot/subscribe');
+            $chatfuel->createButtonToURL('Subscribe to Happyhours', 'https://kanamo@herokuapp.com/api/v1/facebook/bot/subscribe'),
         ]);
         
     }
