@@ -14,7 +14,7 @@
 
             <div class="panel-body">
                <form>
-                   {{ csrf_token() }}
+                   {{ csrf_field() }}
                     <div class="form-group" method="POST" action="/events">
                         <label for="title">Event Title</label>
                         <input
