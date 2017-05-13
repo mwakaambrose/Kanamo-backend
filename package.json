@@ -14,10 +14,10 @@
     "gulp": "^3.9.1",
     "glyphicons": "^0.2.0",
     "jquery": "^3.1.0",
-    "laravel-mix": "^0.6.0",
     "lodash": "^4.16.2",
     "vue": "^2.0.1",
-    "webpack-dev-server": "^2.4.2"
+    "webpack": "2.2.1",
+    "laravel-mix": "^0.8.1"
   },
   "devDependencies": {
     "axios": "^0.15.3",
