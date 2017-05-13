@@ -1,7 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Post::class, function (Faker\Generator $faker) {
+$factory->define(Event::class, function (Faker\Generator $faker) {
 
     return [
         // location info

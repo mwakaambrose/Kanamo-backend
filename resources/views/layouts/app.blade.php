@@ -9,18 +9,14 @@
     <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
     <head>
     <meta charset="UTF-8">
-    <title>Kanamo - Cloud Under developement</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <title>Kanamo</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="images/ico/favicon.png">
     <html lang="{{ config('app.locale') }}">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <!--[if IE]><![endif]-->
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/jquery.js"></script>
     <script src="/js/countdown.js"></script>
     <script src="/js/uikit.scrollspy.js"></script>
     <script src="/js/scripts.js"></script>
@@ -59,12 +55,14 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li>
+                                <a href="{{ route('login') }}">Sign In <i class="fa fa-sign-in fa-fw"></i></a>
+                            </li>
                         @else
                             <li class="dropdown">
+
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->business_name }} <span class="caret"></span>
+                                    <i class="fa fa-user-circle fa-fw"></i> {{ Auth::user()->first_name }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -77,14 +75,6 @@
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
-                                        </form>
-                                    </li>
-
-                                    <li>
-                                        <form id="logout-form" action="/user/{{Auth::user()->id}}" method="POST">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-                                            <button class="btn btn-danger text-danger">Delete Account</button>
                                         </form>
                                     </li>
                                 </ul>

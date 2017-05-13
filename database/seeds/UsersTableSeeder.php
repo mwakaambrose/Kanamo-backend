@@ -15,20 +15,19 @@ class UsersTableSeeder extends Seeder
         User::truncate();
 
         User::create([
-            'name' => 'Jamal Alawes',
+            'first_name' => 'Jamal',
+            'last_name' => 'Alawes',
             'email' => 'jamal@jamal.com',
             'password' => bcrypt('secret'),
-            'business_name' => 'Kanamo',
             'address' => '833 Homer St. Vancouver, BC',
         ]);
 
         User::create([
-            'name' => 'Mwaka Ambrose',
+            'first_name' => 'Mwaka',
+            'last_name' => 'Ambrose',
             'email' => 'mwkams@ambrose.com',
             'password' => bcrypt('secret'),
-            'business_name' => 'Kanamo',
             'address' => 'Kamapala, UG',
         ]);
-
     }
 }
