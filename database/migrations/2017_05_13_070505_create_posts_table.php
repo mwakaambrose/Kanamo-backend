@@ -15,6 +15,23 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
+
+            // location info
+            $table->string('street_address');
+            $table->string('city');
+            $table->string('state');
+            $table->string('country');
+
+            // business info
+            $table->string('business_name');
+
+            // event info
+            $table->string('title');
+            $table->text('description');
+            $table->dateTime('start_time');
+            $table->dateTime('end_time');
+            $table->integer('price');
+
             $table->timestamps();
         });
     }
