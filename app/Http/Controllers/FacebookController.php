@@ -15,6 +15,7 @@ class FacebookController extends Controller
     {
         $chatfuel = new Chatfuel(TRUE);
         $chatfuel->sendText('Hello, Sever!');
+    }
 
     public function message(Request $request)
     {
@@ -23,7 +24,8 @@ class FacebookController extends Controller
 
     public function subscribe(Request $request)
     {
-        return $request->all();
+        $chatfuel = new Chatfuel(TRUE);
+        $chatfuel->sendText('These are the offers we have toda.');
     }
 
     public function reserve(Request $request)
