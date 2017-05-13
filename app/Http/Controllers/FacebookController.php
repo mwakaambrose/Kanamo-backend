@@ -15,10 +15,6 @@ class FacebookController extends Controller
     {
         $chatfuel = new Chatfuel(TRUE);
         $chatfuel->sendText('Hello, Sever!');
-        $chatfuel->createQuickReply('Quick Replies', array(
-            $chatfuel->createQuickReplyButton('Test', ['block', 'block 2'])
-        ));
-    }
 
     public function message(Request $request)
     {
