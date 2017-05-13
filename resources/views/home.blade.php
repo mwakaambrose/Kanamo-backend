@@ -10,7 +10,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    Welcome back, {{ Auth::user()->first_name }}!
+                    Welcome back, {{ Auth::user()->name }}!
                 </div>
             </div>
         </div>

@@ -36,13 +36,16 @@
             </div>
 
             <div class="list-group">
-                @foreach ($events as $event)
-                    @if (!isset($events))
-                        <li class="list-group-item">There are no events nearby.</li>
-                    @else
+
+                @if (count($events) > 0)
+                    @foreach ($events as $event)
                         <li class="list-group-item">{{ $event->name }}</li>
-                    @endif
-                @endforeach
+                    @endforeach
+                @else
+                    <li class="list-group-item">There are no events nearby.
+                        <br><a href="/events/create">Create one?</a>
+                    </li>
+                @endif
             </div>
 
         </div>
