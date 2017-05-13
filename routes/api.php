@@ -18,8 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => 'v1/facebook'], function () {
-    Route::get('user', 'FacebookController@facebookVerify');
-    Route::post('message', 'FacebookController@message');
-    Route::post('subscribe', 'FacebookController@subscribe');
-    Route::post('reserve', 'FacebookController@reserve');
+    Route::get('bot', 'FacebookController@index');
+    Route::post('bot/message', 'FacebookController@message');
+    Route::post('bot/subscribe', 'FacebookController@subscribe');
+    Route::post('bot/reserve', 'FacebookController@reserve');
+    Route::get('bot/more', 'FacebookController@moreinfo');
 });
