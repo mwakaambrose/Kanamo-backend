@@ -22,4 +22,5 @@ Route::group(['prefix' => 'v1/facebook'], function () {
     Route::post('bot/message', 'FacebookController@message');
     Route::post('bot/subscribe', 'FacebookController@subscribe');
     Route::post('bot/reserve', 'FacebookController@reserve');
+    Route::get('bot/moreinfo', 'FacebookController@moreinfo');
 });
