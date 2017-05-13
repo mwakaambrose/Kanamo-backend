@@ -52,10 +52,8 @@
     </div>
 
     <div class="col-sm-9">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div id="map"></div>
-            </div>
+        <div class="panel panel-default panel-map">
+            <div id="map"></div>
         </div>
     </div>
 </div>
@@ -63,12 +61,10 @@
 <script>
 function initMap() {
     var kampala = {lat: 0.335124, lng: 32.582643 };
-
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
         center: kampala
     });
-
     var marker = new google.maps.Marker({
         position: kampala,
         map: map
