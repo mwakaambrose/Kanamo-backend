@@ -6,42 +6,12 @@
 
 <div class="fullwidth clearfix">
 	<div id="topcontainer" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-
 		<p><span class="fa fa-signal"></span></p>
 		<h1><span>Kanamo</span><br />is coming soon</h1>
 		<p>It's almost ready ... honest</p>
-
 	</div>
 </div>
 
-<div class="arrow-separator arrow-white"></div>
-
-<div class="fullwidth colour1 clearfix">
-	<div id="countdown" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-
-		<div id="countdowncont" class="clearfix">
-			<ul id="countscript">
-				<li>
-					<span class="days">00</span>
-					<p>Days</p>
-				</li>
-				<li>
-					<span class="hours">00</span>
-					<p>Hours</p>
-				</li>
-				<li class="clearbox">
-					<span class="minutes">00</span>
-					<p>Minutes</p>
-				</li>
-				<li>
-					<span class="seconds">00</span>
-					<p>Seconds</p>
-				</li>
-			</ul>
-		</div>
-
-	</div>
-</div>
 
 <div class="arrow-separator arrow-theme"></div>
 
