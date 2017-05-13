@@ -48,7 +48,7 @@
                                 <a class="kanamo-nav" href="{{ route('login') }}">Sign In <i class="fa fa-sign-in fa-fw"></i></a>
                             </li>
                         @else
-                            <li ><a href="/posts"><span class="kanamo-nav">Posts</span></a></li>
+                            <li ><a href="/events"><span class="kanamo-nav">Events</span></a></li>
                             <li class="dropdown">
 
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -75,10 +75,14 @@
             </div>
         </nav>
 
-        @yield('content')
+        <div class="container">
+            @yield('content')
+        </div>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBchnQ__jg6xsIVnuEgYH7M0t0q7TX6H9I&callback=initMap"
+  type="text/javascript"></script>
 </body>
 </html>

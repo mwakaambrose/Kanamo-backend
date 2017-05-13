@@ -22,9 +22,6 @@ class CreateEventsTable extends Migration
             $table->string('state');
             $table->string('country');
 
-            // business info
-            $table->string('business_name');
-
             // event info
             $table->string('title');
             $table->text('description');
@@ -32,6 +29,7 @@ class CreateEventsTable extends Migration
             $table->dateTime('end_time');
             $table->integer('price');
 
+            // todo: add business name foreign key
             $table->timestamps();
         });
     }
