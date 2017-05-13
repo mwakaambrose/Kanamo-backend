@@ -15,7 +15,6 @@ class Event extends Model
 
         // 'location',
         'city',
-        'state',
         'street_address',
         'post_code',
         'country',
