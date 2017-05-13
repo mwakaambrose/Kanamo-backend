@@ -47,7 +47,11 @@
                             <li>
                                 <a class="kanamo-nav" href="{{ route('login') }}">Sign In <i class="fa fa-sign-in fa-fw"></i></a>
                             </li>
+                            <li>
+                                <a class="kanamo-nav" href="{{ route('register') }}">Register </a>
+                            </li>
                         @else
+                            <li ><a href="/home"><span class="kanamo-nav">Dashboard</span></a></li>
                             <li ><a href="/events"><span class="kanamo-nav">Events</span></a></li>
                             <li class="dropdown">
 
