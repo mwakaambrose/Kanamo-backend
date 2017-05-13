@@ -20,7 +20,7 @@ class FacebookController extends Controller
      */
     public function facebookVerify(Request $request)
     {
-        return $request->verify;
+        return $request->all()['hub_challenge'];
     }
 
     /**
