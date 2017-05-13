@@ -1,17 +1,17 @@
 /*
-Error: File to import not found or unreadable: node_modules/bootstrap-sass/assets/stylesheets/bootstrap.
+Error: File to import not found or unreadable: node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss.
         on line 5 of app.scss
 
 1: 
 2: @import "./style.css";
 3: 
 4: // Bootstrap
-5: @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-6: 
-7: // Bootstrap
-8: //@import "./bootstrap.css";
+5: @import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+6: // Custom Navigation
+7: @import "./_navigation.scss";
+8: 
 9: 
-10: // Custom Navigation
+10: // Variables
 
 Backtrace:
 app.scss:5
@@ -57,4 +57,4 @@ app.scss:5
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: node_modules/bootstrap-sass/assets/stylesheets/bootstrap.\A         on line 5 of app.scss\A \A 1: \A 2: @import \"./style.css\";\A 3: \A 4: // Bootstrap\A 5: @import \"node_modules/bootstrap-sass/assets/stylesheets/bootstrap\";\A 6: \A 7: // Bootstrap\A 8: //@import \"./bootstrap.css\";\A 9: \A 10: // Custom Navigation"; }
+  content: "Error: File to import not found or unreadable: node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss.\A         on line 5 of app.scss\A \A 1: \A 2: @import \"./style.css\";\A 3: \A 4: // Bootstrap\A 5: @import \"node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss\";\A 6: // Custom Navigation\A 7: @import \"./_navigation.scss\";\A 8: \A 9: \A 10: // Variables"; }
