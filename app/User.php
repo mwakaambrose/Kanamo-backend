@@ -15,10 +15,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 
-        'email', 
+        // identification info
+        'name',
+        'email',
         'password',
-        'business_name',
+
+        // details
         'address',
     ];
 
@@ -30,4 +32,21 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the events for the user.
+     */
+    public function events()
+    {
+        return $this->hasMany('App\Event');
+    }
+
+    /**
+     * Get the events for the user.
+     */
+    public function business()
+    {
+        return $this->belongsTo('App\Business');
+    }
+
 }

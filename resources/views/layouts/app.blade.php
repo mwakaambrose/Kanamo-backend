@@ -3,35 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
-    <!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
-    <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
-    <head>
-    <meta charset="UTF-8">
-    <title>Kanamo - Cloud Under developement</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="images/ico/favicon.png">
-    <html lang="{{ config('app.locale') }}">
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-    <!--[if IE]><![endif]-->
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/jquery.js"></script>
-    <script src="/js/countdown.js"></script>
-    <script src="/js/uikit.scrollspy.js"></script>
-    <script src="/js/scripts.js"></script>
-    <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Styles -->
+    <meta name="csrf-token" id="csrf_token" content="{{ csrf_token() }}">
+    <meta name="api-token" id="api-token" content= "@if(Auth::check()) {{ Auth::user()->api_token }} @endif">
+
+    <title> @yield('title') | {{ config('app.name', 'Kanamo') }}</title>
+
+    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
+
 <body id="backtotop">
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+
+        <nav class="navbar navbar-default navbar-static-top topnav">
             <div class="container">
                 <div class="navbar-header">
 
@@ -44,8 +29,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        Kanamo
+                    <a class="navbar-brand text-uppercase" href="{{ url('/') }}">
+                        <span class="kanamo-brand">Kanamo</span>
                     </a>
                 </div>
 
@@ -59,12 +44,15 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li>
+                                <a class="kanamo-nav" href="{{ route('login') }}">Sign In <i class="fa fa-sign-in fa-fw"></i></a>
+                            </li>
                         @else
+                            <li ><a href="/events"><span class="kanamo-nav">Events</span></a></li>
                             <li class="dropdown">
+
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->business_name }} <span class="caret"></span>
+                                    <i class="fa fa-user-circle fa-fw kanamo-nav"></i> <span class="kanamo-nav">{{ Auth::user()->first_name }}</span><span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -79,14 +67,6 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-
-                                    <li>
-                                        <form id="logout-form" action="/user/{{Auth::user()->id}}" method="POST">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-                                            <button class="btn btn-danger text-danger">Delete Account</button>
-                                        </form>
-                                    </li>
                                 </ul>
                             </li>
                         @endif
@@ -95,10 +75,14 @@
             </div>
         </nav>
 
-        @yield('content')
+        <div class="container">
+            @yield('content')
+        </div>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBchnQ__jg6xsIVnuEgYH7M0t0q7TX6H9I&callback=initMap"
+  type="text/javascript"></script>
 </body>
 </html>
