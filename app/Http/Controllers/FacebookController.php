@@ -17,16 +17,23 @@ class FacebookController extends Controller
         $chatfuel->sendText('Hello, Sever!');
     }
 
-    public function message(Request $request)
+    public function events()
     {
-       return $request->all();
+        //pull todays events from the database and send here.
+        $chatfuel = new Chatfuel(TRUE);
+        $chatfuel->sendText('Here is what I have so far.');
+
+        for ($i=0; $i < 5; $i++) { 
+            $chatfuel->sendText('Hello, Event - '.$i);
+        }
     }
 
     public function subscribe(Request $request)
     {
+        $user_id = $request->all()['chatfuel_user_id'];
+        $messenger_user_id = $request->all()['chatfuel_user_id'];
         $chatfuel = new Chatfuel(TRUE);
-        $chatfuel->sendText('These are the offers we have toda.');
-        dd($request->all());
+        $chatfuel->sendText('These are the offers we have today: .'.$user_id .' - '.$messenger_user_id);
     }
 
     public function reserve(Request $request)
@@ -37,9 +44,8 @@ class FacebookController extends Controller
     public function moreinfo()
     {
         $chatfuel = new Chatfuel(TRUE);
-        $chatfuel->sendTextCard('Kanamo is your happy hour messenger bot. It alerts you to cheap happening places,
-         it allows you to make reservations and share the good news with your friends.', [
-            $chatfuel->createButtonToURL('Subscribe to Happyhours', 'https://kanamo.herokuapp.com/api/v1/facebook/bot/subscribe'),
+        $chatfuel->sendTextCard('Kanamo is events discovery platform. It alerts you to cheap happening places, share the good news with your friends.', [
+            $chatfuel->createButtonToURL('Read more', 'http://facebook.com/kanamoUg'),
         ]);
         
     }
