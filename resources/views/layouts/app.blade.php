@@ -3,31 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
-    <!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
-    <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
-    <head>
-    <meta charset="UTF-8">
-    <title>Kanamo</title>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="images/ico/favicon.png">
-    <html lang="{{ config('app.locale') }}">
-    <!-- Fonts -->
-    <!--[if IE]><![endif]-->
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/countdown.js"></script>
-    <script src="/js/uikit.scrollspy.js"></script>
-    <script src="/js/scripts.js"></script>
-    <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Styles -->
+    <meta name="csrf-token" id="csrf_token" content="{{ csrf_token() }}">
+    <meta name="api-token" id="api-token" content= "@if(Auth::check()) {{ Auth::user()->api_token }} @endif">
+
+    <title> @yield('title') | {{ config('app.name', 'Kanamo') }}</title>
+
+    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
+
 <body id="backtotop">
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+
+        <nav class="navbar navbar-default navbar-static-top topnav">
             <div class="container">
                 <div class="navbar-header">
 
@@ -40,8 +29,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        Kanamo
+                    <a class="navbar-brand text-uppercase" href="{{ url('/') }}">
+                        <span class="kanamo-brand">Kanamo</span>
                     </a>
                 </div>
 
@@ -56,13 +45,14 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li>
-                                <a href="{{ route('login') }}">Sign In <i class="fa fa-sign-in fa-fw"></i></a>
+                                <a class="kanamo-nav" href="{{ route('login') }}">Sign In <i class="fa fa-sign-in fa-fw"></i></a>
                             </li>
                         @else
+                            <li ><a href="/posts"><span class="kanamo-nav">Posts</span></a></li>
                             <li class="dropdown">
 
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <i class="fa fa-user-circle fa-fw"></i> {{ Auth::user()->first_name }} <span class="caret"></span>
+                                    <i class="fa fa-user-circle fa-fw kanamo-nav"></i> <span class="kanamo-nav">{{ Auth::user()->first_name }}</span><span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">

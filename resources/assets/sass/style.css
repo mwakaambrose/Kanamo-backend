@@ -1,16 +1,8 @@
 /* ==================================================
-   CSS Imports
-================================================== */
-
-@import url("reset.css");
-@import url("owlcarousel.css");
-@import url("uikit.scrollspy.css");
-
-/* ==================================================
    Icon Fonts
 ================================================== */
 
-@import url("fonts/fontawesome/font-awesome.css");
+@import "../../fonts/fontawesome/font-awesome.css";
 
 /* ==================================================
    Google Fonts

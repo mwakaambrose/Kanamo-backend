@@ -1,13 +1,16 @@
 @extends('layouts.app')
+
+@section('title', 'Welcome')
+
 @section('content')
 
 <div class="fullwidth clearfix">
 	<div id="topcontainer" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-		
+
 		<p><span class="fa fa-signal"></span></p>
 		<h1><span>Kanamo</span><br />is coming soon</h1>
 		<p>It's almost ready ... honest</p>
-		
+
 	</div>
 </div>
 
@@ -36,7 +39,7 @@
 				</li>
 			</ul>
 		</div>
-	
+
 	</div>
 </div>
 
@@ -55,7 +58,7 @@
 				<button class="formbutton" type="submit"><span class="fa fa-arrow-right"></span></button>
 			</form>
 		</div>
-	
+
 	</div>
 </div>
 

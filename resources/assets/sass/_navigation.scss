@@ -1,0 +1,24 @@
+.navbar-default {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+}
+
+// body background
+
+div#app {
+  background: url('../img/bg.svg') no-repeat center center fixed;
+  min-height: 100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.kanamo-brand {
+  color: white;
+  font-weight: 500;
+}
+
+ .kanamo-nav {
+  color: white;
+  font-weight: 500;
+}
