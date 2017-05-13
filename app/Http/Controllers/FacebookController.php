@@ -26,7 +26,6 @@ class FacebookController extends Controller
     {
         $chatfuel = new Chatfuel(TRUE);
         $chatfuel->sendText('These are the offers we have toda.');
-
         dd($request->all());
     }
 
@@ -38,8 +37,9 @@ class FacebookController extends Controller
     public function moreinfo()
     {
         $chatfuel = new Chatfuel(TRUE);
-        $chatfuel->sendTextCard('These are the offers we have toda.', [
-            $chatfuel->createButtonToURL('Subscribe to Happyhours', 'https://kanamo@herokuapp.com/api/v1/facebook/bot/subscribe'),
+        $chatfuel->sendTextCard('Kanamo is your happy hour messenger bot. It alerts you to cheap happening places,
+         it allows you to make reservations and share the good news with your friends.', [
+            $chatfuel->createButtonToURL('Subscribe to Happyhours', 'https://kanamo.herokuapp.com/api/v1/facebook/bot/subscribe'),
         ]);
         
     }
