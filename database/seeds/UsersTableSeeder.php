@@ -15,16 +15,14 @@ class UsersTableSeeder extends Seeder
         User::truncate();
 
         User::create([
-            'first_name' => 'Jamal',
-            'last_name' => 'Alawes',
+            'name' => 'Jamal Alawes',
             'email' => 'jamal@jamal.com',
             'password' => bcrypt('secret'),
             'address' => '833 Homer St. Vancouver, BC',
         ]);
 
         User::create([
-            'first_name' => 'Mwaka',
-            'last_name' => 'Ambrose',
+            'name' => 'Mwaka Ambrose',
             'email' => 'mwkams@ambrose.com',
             'password' => bcrypt('secret'),
             'address' => 'Kamapala, UG',

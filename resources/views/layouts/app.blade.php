@@ -14,6 +14,7 @@
 </head>
 
 <body id="backtotop">
+
     <div id="app">
 
         <nav class="navbar navbar-default navbar-static-top topnav">
@@ -45,18 +46,31 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li>
-                                <a class="kanamo-nav" href="{{ route('login') }}">Sign In <i class="fa fa-sign-in fa-fw"></i></a>
+                                <a class="kanamo-nav" href="{{ route('login') }}">
+                                    Sign In <i class="fa fa-sign-in fa-fw"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="kanamo-nav" href="{{ route('register') }}">
+                                    Register <i class="fa fa-arrow-right fa-fw"></i>
+                                </a>
                             </li>
                             <li>
                                 <a class="kanamo-nav" href="{{ route('register') }}">Register </a>
                             </li>
                         @else
-                            <li ><a href="/home"><span class="kanamo-nav">Dashboard</span></a></li>
-                            <li ><a href="/events"><span class="kanamo-nav">Events</span></a></li>
+                            <li>
+                                <a href="/events">
+                                    <span class="kanamo-nav">Events</span>
+                                </a>
+                            </li>
                             <li class="dropdown">
 
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <i class="fa fa-user-circle fa-fw kanamo-nav"></i> <span class="kanamo-nav">{{ Auth::user()->first_name }}</span><span class="caret"></span>
+                                    <i class="fa fa-user-circle fa-fw kanamo-nav"></i> <span class="kanamo-nav">
+                                        {{ Auth::user()->name }}
+                                    </span><span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -85,7 +99,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ mix('/js/app.js') }}"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBchnQ__jg6xsIVnuEgYH7M0t0q7TX6H9I&callback=initMap"
   type="text/javascript"></script>
 </body>
