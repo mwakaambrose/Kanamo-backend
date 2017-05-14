@@ -10,7 +10,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    Welcome back, {{ Auth::user()->first_name }}!
+                    <h4>A total of <strong>{{count($events)}}</strong> events has been pulished in the system and over <strong>500+</strong> potential people reached!</h4>
                 </div>
             </div>
         </div>

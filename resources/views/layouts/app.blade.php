@@ -82,6 +82,20 @@
         <div class="container">
             @yield('content')
         </div>
+        <div class="fullwidth clearfix">
+    <div id="footercont" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
+            <div id="socialmedia" class="clearfix">
+                <ul>
+                    <li><a title="" href="#" rel="external"><span class="fa fa-facebook"></span></a></li>
+                    <li><a title="" href="#" rel="external"><span class="fa fa-twitter"></span></a></li>
+                    <li><a title="" href="#" rel="external"><span class="fa fa-google-plus"></span></a></li>
+                    <li><a title="" href="#" rel="external"><span class="fa fa-linkedin"></span></a></li>
+                    <li><a title="" href="#" rel="external"><span class="fa fa-pinterest"></span></a></li>
+                </ul>
+            </div>
+            <p>Kanamo is powered by <a title="download website templates" href="http://www.facebook.com/TrustFinity" rel="external">TrustFinity</a> - &copy 2017 </p>
+        </div>
+    </div>
     </div>
 
     <!-- Scripts -->

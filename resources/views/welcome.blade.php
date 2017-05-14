@@ -11,9 +11,8 @@
 			<div class="col-xs-12 col-sm-4">
 				<div class="spacer hidden-xs"><br><br><br></div>
 
-				<p><span class="fa fa-signal"></span></p>
-				<h1><span>Kanamo</span><br /></h1>
-				<h3 class="alt"><em>Find your Happy Hour</em></h3>				
+				<p><img class="img img-responsive" src="/imgs/kanamo_new.png"></p>
+				<h4 >Your HappyHour Messenger</h4>				
 				<div class="spacer visible-xs"><br><br></div>
 			</div>
 			<div class="col-xs-12 col-sm-8">
@@ -24,7 +23,7 @@
 	</div>
 </div>
 
-<h2>This week's most popular</h2>
+<h3>Popular this week</h3>
 <div class="row popular-deals">
 	@foreach([
 		[
@@ -96,8 +95,6 @@
 	</div>
 </div> --}}
 
-<div class="arrow-separator arrow-theme"></div>
-
 <div class="row fullwidth signup colour2 clearfix">
 	<div class="col-xs-12">
 		<div class="">
@@ -116,22 +113,5 @@
 	</div>
 </div>
 <div class="arrow-separator arrow-themelight"></div>
-
-<div class="fullwidth clearfix">
-	<div id="footercont" class="bodycontainer clearfix" data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-
-		<p class="backtotop"><a title="" href="#backtotop"><span class="fa fa-angle-double-up"></span></a></p>
-		<div id="socialmedia" class="clearfix">
-			<ul>
-				<li><a title="" href="#" rel="external"><span class="fa fa-facebook"></span></a></li>
-				<li><a title="" href="#" rel="external"><span class="fa fa-twitter"></span></a></li>
-				<li><a title="" href="#" rel="external"><span class="fa fa-google-plus"></span></a></li>
-				<li><a title="" href="#" rel="external"><span class="fa fa-linkedin"></span></a></li>
-				<li><a title="" href="#" rel="external"><span class="fa fa-pinterest"></span></a></li>
-			</ul>
-		</div>
-		<p>Kanamo is powered by <a title="download website templates" href="http://www.facebook.com/TrustFinity" rel="external">TrustFinity</a> - &copy 2017 </p>
-	</div>
-</div>
 
 @endsection
