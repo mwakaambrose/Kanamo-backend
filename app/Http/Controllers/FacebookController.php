@@ -54,10 +54,18 @@ class FacebookController extends Controller
 
         $chatfuel = new Chatfuel(TRUE);
         $chatfuel->sendText('Hey '.$first_name.', Here is what I have so far.');
-        for ($i=0; $i < 5; $i++) { 
+        $events = Event::all();
 
-            $chatfuel->sendTextCard('Smiling Panda -'. $i .'. 3 beers at 10,000. save 4,000. lots of nyamachoma', [
-                $chatfuel->createCallButton('+256774614935', 'Call to Reserve'),
+        foreach ($events as $event) {
+            $chatfuel->sendTextCard(
+                'Que Pasa '.
+                $event->title.' '.
+                $event->description.' starts at'.
+                $event->start_time.' stops at. Come to'.
+                'Acacia Complex, Kampala Uganda.', 
+
+                [
+                    $chatfuel->createCallButton('+256774614935', 'Call to Reserve'),
             ]);
         }
 
@@ -73,15 +81,23 @@ class FacebookController extends Controller
 
         // fetch last insert post/event in the database
         $chatfuel = new Chatfuel(TRUE);
-        $chatfuel->sendTextCard('Smiling Panda. 3 beers at 10,000. save 4,000. lots of nyamachoma', [
-            $chatfuel->createCallButton('+256774614935', 'Call to Reserve'),
+        $event = Event::all()->last();
+        $chatfuel->sendTextCard(
+            'Que Pasa '.
+            $event->title.' '.
+            $event->description.' starts at'.
+            $event->start_time.' stops at. Come to'.
+            'Acacia Complex, Kampala Uganda.', 
+
+            [
+                $chatfuel->createCallButton('+256774614935', 'Call to Reserve'),
         ]);
     }
 
     public function moreinfo()
     {
         $chatfuel = new Chatfuel(TRUE);
-        $chatfuel->sendTextCard('Kanamo is events discovery platform. It alerts you to cheap happening places, share the good news with your friends.', [
+        $chatfuel->sendTextCard('Kanamo is an events discovery platform. It alerts you to cheap happening places, share the good news with your friends.', [
             $chatfuel->createButtonToURL('Read more', 'http://facebook.com/kanamoUg'),
         ]);
         
