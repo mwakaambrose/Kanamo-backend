@@ -41,8 +41,8 @@ class FacebookController extends Controller
         $chatfuel->sendText('Hey '.$first_name.', Here is what I have so far.');
         for ($i=0; $i < 5; $i++) { 
 
-            $chatfuel->sendTextCard('Franeko Pub - '.$i, [
-                $chatfuel->createButtonToURL('Make reservation.', 'http://facebook.com/kanamoUg'),
+            $chatfuel->sendTextCard('Smiling Panda -'. $i .'. 3 beers at 10,000. save 4,000. lots of nyamachoma', [
+                $chatfuel->createCallButton('+256774614935', 'Call to Reserve'),
             ]);
         }
 
@@ -51,6 +51,16 @@ class FacebookController extends Controller
     public function reserve(Request $request)
     {
         return $request->all(); 
+    }
+
+    public function latest(Request $request)
+    {
+
+        // fetch last insert post/event in the database
+        $chatfuel = new Chatfuel(TRUE);
+        $chatfuel->sendTextCard('Smiling Panda. 3 beers at 10,000. save 4,000. lots of nyamachoma', [
+            $chatfuel->createCallButton('+256774614935', 'Call to Reserve'),
+        ]);
     }
 
     public function moreinfo()
