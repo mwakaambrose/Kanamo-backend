@@ -17,17 +17,17 @@ class CreateEventsTable extends Migration
             $table->increments('id');
 
             // location info
-            $table->string('street_address');
-            $table->string('city');
-            $table->string('state');
-            $table->string('country');
+            $table->string('street_address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('country')->nullable();
 
             // event info
-            $table->string('title');
-            $table->text('description');
-            $table->dateTime('start_time');
-            $table->dateTime('end_time');
-            $table->integer('price');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->string('start_time')->nullable();
+            $table->string('end_time')->nullable();
+            $table->integer('price')->nullable();
 
             // todo: add business name foreign key
             $table->timestamps();

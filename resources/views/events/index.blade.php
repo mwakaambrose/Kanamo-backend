@@ -37,7 +37,9 @@
                     @if(count($events) < 1)
                     <li class="list-group-item">There are no events nearby.</li>
                     @endif
-                    <li class="list-group-item">{{ $event->name }}</li>
+                    <li class="list-group-item">
+                        <p><strong>{{ $event->title }}</strong></p> 
+                        <p>posted on {{ $event->created_at }}</p></li>
                 @endforeach
             </div>
 

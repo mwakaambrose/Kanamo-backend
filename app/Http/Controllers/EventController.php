@@ -36,7 +36,9 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $event = new Event($request->all());
+        $event->save();
+        return redirect('/events');
     }
 
     /**
