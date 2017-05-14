@@ -56,6 +56,9 @@
                                     Register <i class="fa fa-arrow-right fa-fw"></i>
                                 </a>
                             </li>
+                            <li>
+                                <a class="kanamo-nav" href="{{ route('register') }}">Register </a>
+                            </li>
                         @else
                             <li>
                                 <a href="/events">
