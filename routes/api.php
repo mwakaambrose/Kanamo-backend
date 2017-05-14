@@ -23,4 +23,6 @@ Route::group(['prefix' => 'v1/facebook'], function () {
     Route::post('bot/subscribe', 'FacebookController@subscribe');
     Route::post('bot/reserve', 'FacebookController@reserve');
     Route::get('bot/more', 'FacebookController@moreinfo');
+    //http://kanamo.herokuapp.com/api/v1/facebook/bot/latest
+    Route::get('bot/latest', 'FacebookController@latest');
 });
