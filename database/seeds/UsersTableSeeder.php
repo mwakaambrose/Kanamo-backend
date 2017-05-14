@@ -19,13 +19,15 @@ class UsersTableSeeder extends Seeder
             'email' => 'jamal@jamal.com',
             'password' => bcrypt('secret'),
             'address' => '833 Homer St. Vancouver, BC',
-        ]);
+            'business_name' => 'Que Pasa'
+        ]); 
 
-        User::create([
+        User::create([  
             'name' => 'Mwaka',
-            'email' => 'mwkams@ambrose.com',
+            'email' => 'mwkams@gmail.com',
             'password' => bcrypt('secret'),
             'address' => 'Kamapala, UG',
+            'business_name' => 'Smilling Panda Gulu'
         ]);
     }
 }
