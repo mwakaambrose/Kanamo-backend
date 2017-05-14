@@ -1,11 +1,13 @@
-
-@import "./style.css";
+// Variables
+@import "variables";
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 // Custom Navigation
-@import "./_navigation.scss";
+@import "navigation";
 
-// Variables
-@import "variables";
+@import "style.css";
+
+
+

@@ -19,17 +19,19 @@ class CreateEventsTable extends Migration
             // location info
             $table->string('street_address');
             $table->string('city');
-            $table->string('state');
+            $table->string('state')->nullable();
             $table->string('country');
 
             // event info
             $table->string('title');
             $table->text('description');
-            $table->dateTime('start_time');
-            $table->dateTime('end_time');
+            $table->date('start_date');
+            $table->time('start_time');
+            $table->date('end_date');
+            $table->time('end_time');
+
             $table->integer('price');
 
-            // todo: add business name foreign key
             $table->timestamps();
         });
     }

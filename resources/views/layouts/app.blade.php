@@ -14,6 +14,7 @@
 </head>
 
 <body id="backtotop">
+
     <div id="app">
 
         <nav class="navbar navbar-default navbar-static-top topnav">
@@ -95,7 +96,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ mix('/js/app.js') }}"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBchnQ__jg6xsIVnuEgYH7M0t0q7TX6H9I&callback=initMap"
   type="text/javascript"></script>
 </body>

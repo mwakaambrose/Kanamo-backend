@@ -29,4 +29,6 @@ class Event extends Model
         'end_time',
         'price',
     ];
+
+    protected $dateFormat = 'Y-m-d';
 }
