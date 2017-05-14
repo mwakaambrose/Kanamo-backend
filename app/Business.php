@@ -14,6 +14,4 @@ class Business extends Model
     {
         return $this->hasMany('App\User');
     }
-
-    // todo: add function that returns App\Event of all the App\User belonging to this business
 }

@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Chatfuel;
 use App\Facebook;
+use App\Event;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class FacebookController extends Controller
 {
@@ -23,10 +25,23 @@ class FacebookController extends Controller
         //user ids.
 
         $chatfuel = new Chatfuel(TRUE);
+        $events = Event::all();
+
+        // $business_name = Auth::user()->business_name;
+        // $address = Auth::user()->address;
         $chatfuel->sendText('Here is what I have so far.');
 
-        for ($i=0; $i < 5; $i++) { 
-            $chatfuel->sendText('Hello, Event - '.$i);
+        foreach ($events as $event) {
+            $chatfuel->sendTextCard(
+                'Que Pasa '.
+                $event->title.' '.
+                $event->description.' starts at'.
+                $event->start_time.' stops at. Come to'.
+                'Acacia Complex, Kampala Uganda.', 
+
+                [
+                    $chatfuel->createCallButton('+256774614935', 'Call to Reserve'),
+            ]);
         }
     }
 
