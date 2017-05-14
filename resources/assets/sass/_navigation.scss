@@ -6,19 +6,83 @@
 // body background
 
 div#app {
-  background: url('../img/bg.svg') no-repeat center center fixed;
   min-height: 100vh;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  // background: url('../img/bg.svg') no-repeat center center fixed;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
 }
+
 .kanamo-brand {
-  color: white;
+  color: $brand-primary;
   font-weight: 500;
 }
 
- .kanamo-nav {
-  color: white;
+.navbar-default .navbar-nav > li > a,
+.kanamo-nav {
+  color: $brand-primary;
+}
+
+.kanamo-nav {
+  background-color: white;
   font-weight: 500;
+}
+
+
+h3.alt{
+  color: #ccc;
+  font-style: italic;
+}
+
+.row.popular-deals{
+
+  // background-color: ;
+  background: url('../img/bg.svg') no-repeat center center fixed;
+  
+  .popular{
+    margin: 16px 0px;
+    padding: 10px 12px;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    border-radius: 3px;
+
+    * {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+
+    h3.bar{
+      font-weight: normal;
+    }
+    .deal{
+      font-size: 150%;
+    }
+
+
+    &:hover{
+  
+      text-decoration: none;
+      background-color: rgba(255, 255, 255, 1);
+
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f1da36+0,fffbe8+22,f1da36+30,fefcea+39,f1da36+100 */
+      // background: #f1da36; 
+      // background: -moz-linear-gradient(top,  #f1da36 0%, #fffbe8 22%, #f1da36 30%, #fefcea 39%, #f1da36 100%); 
+      // background: -webkit-linear-gradient(top,  #f1da36 0%,#fffbe8 22%,#f1da36 30%,#fefcea 39%,#f1da36 100%); 
+      // background: linear-gradient(to bottom,  #f1da36 0%,#fffbe8 22%,#f1da36 30%,#fefcea 39%,#f1da36 100%); 
+      // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#f1da36',GradientType=0 ); 
+    }
+
+    .content{
+      text-align: center;
+    }
+  }
+
+}
+
+
+.row.signup{
+  width: auto;
 }
