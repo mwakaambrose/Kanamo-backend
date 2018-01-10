@@ -19,3 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('events', 'EventController');
+
+Route::domain('api.kanamo.test')->group(function () {
+    Route::get('today', 'AndroidApiController@today');
+});

@@ -15,21 +15,16 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
-
-            // location info
-            $table->string('street_address')->nullable();
-            $table->string('city')->nullable();
-            $table->string('state')->nullable();
-            $table->string('country')->nullable();
-
-            // event info
+            $table->string('address');
+            $table->string('post_client_name');
             $table->string('title')->nullable();
-            $table->text('description')->nullable();
-            $table->string('start_time')->nullable();
-            $table->string('end_time')->nullable();
+            $table->string('advert');
+            $table->string('start_time');
+            $table->string('stop_time')->nullable();
+            $table->date('date')->nullable();
             $table->integer('price')->nullable();
-
-            // todo: add business name foreign key
+            $table->string('coordinates');
+            $table->string('picture_url')->nullable();
             $table->timestamps();
         });
     }
