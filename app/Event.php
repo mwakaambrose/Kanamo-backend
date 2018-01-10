@@ -12,22 +12,15 @@ class Event extends Model
      * @var array
      */
     protected $fillable = [
-
-        // 'location',
-        'city',
-        'state',
-        'street_address',
-        'post_code',
-        'country',
-
-        // business info
-        'business_name',
-
-        // event info
+        'address',
+        'post_client_name',
         'title',
-        'description',
+        'advert',
         'start_time',
-        'end_time',
+        'stop_time',
+        'date',
         'price',
+        'coordinates',
+        'picture_url',
     ];
 }

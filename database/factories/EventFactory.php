@@ -1,24 +1,21 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Event::class, function (Faker\Generator $faker) {
+$factory->define(App\Event::class, function (Faker\Generator $faker) {
 
     return [
         // location info
-        'city' => $faker->city,
-        'state' => $faker->state,
-        'street_address' => $faker->streetAddress,
-        'post_code' => $faker->postcode,
-        'country' => $faker->country,
-
-        // business info
-        'business_name' => $faker->company,
-
-        // event info
+        'address' => $faker->address,
+        'post_client_name' => $faker->company,
         'title' => $faker->name,
-        'description' => $faker->text,
-        'start_time' => $faker->date,
-        'end_time' => $faker->date,
-        'price' => str_random(10),
+        'advert' => $faker->text,
+        'date' => $faker->date,
+        'picture_url' => $faker->randomElement(['/images/one.png', '/images/two.png', '/images/three.png']),
+        'start_time' => $faker->time,
+        'stop_time' => $faker->time,
+        'coordinates' => $faker->randomElement(['0.339013,32.5860253', '0.339013,32.5860253', '0.339013,32.5860253',
+            '0.3293572,32.5826565', '0.3293572,32.5826565', '0.3293572,32.5826565', '0.3293572,32.5826565'
+            ]),
+        'price' => $faker->numberBetween(2000, 500000),
     ];
 });
